@@ -7,11 +7,11 @@ on:
   workflow_dispatch:
 
 jobs:
-  nam_build:
+  huy_build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: nam remote exec ssh
+      - name: Huy remote exec ssh
         run: |
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_SECRET_KEY }}" >  ~/.ssh/id_rsa
