@@ -10,6 +10,6 @@ services:
       - apiapp_c
     build: ./webapp
     ports:
-      - 8006:5000
+      - ${webapp_port:-8006}:5000
     environment:
       - NAME=${NAME}
