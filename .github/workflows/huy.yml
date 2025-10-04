@@ -16,5 +16,21 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_SECRET_KEY }}" >  ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          cat ~/.ssh/id_rsa
-          
+          ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa huy@34.143.236.100 sh -c "
+            set -x
+            mkdir -p ~/ci_huy
+            echo 'git clone code neu chua co'
+            # if [ ! -d ~/ci_huy/todb17_danhsachlop_ci/.git ] ; then
+            #   echo 'chua co repo'
+            #   cd ~/ci_huy ; git clone git@github.com:huyanhmg/todb17_danhsachlop_ci.git
+            # else
+            #   echo 'da co repo'
+            # fi
+
+            # echo 'git pull'
+            # cd ~/ci_huy/todb17_danhsachlop_ci
+            # git checkout cihuy; git pull
+
+            # echo 'run docker-compose up'
+            # NAME=HUY ./composeup.sh
+          "
